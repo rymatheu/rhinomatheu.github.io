@@ -55,13 +55,22 @@ ul.task-list input[type="checkbox"] {
 
 // Profile
 
+// Medium-sized profile photo: centered above the bio on phones, floated beside it from `sm` up.
 .profile {
   width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+  figure {
+    max-width: 180px;
+    margin: 0 auto;
+  }
 
   .more-info {
     margin-bottom: 5px;
     margin-top: 5px;
     font-family: monospace;
+    font-size: 0.8rem;
 
     p {
       display: inline-block;
@@ -70,17 +79,21 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-.profile.float-right {
-  margin-left: 1rem;
-}
-
-.profile.float-left {
-  margin-right: 1rem;
-}
-
 @media (min-width: 576px) {
+  .profile.float-sm-right {
+    margin: 0 0 1rem 1.5rem;
+  }
+
+  .profile.float-sm-left {
+    margin: 0 1.5rem 1rem 0;
+  }
+
   .profile {
-    width: 30%;
+    width: 220px;
+
+    figure {
+      max-width: none;
+    }
 
     .address {
       p {

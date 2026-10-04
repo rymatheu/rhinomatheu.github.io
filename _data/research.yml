@@ -1,0 +1,103 @@
+# Research highlights shown on the about page (rendered by _includes/research.liquid).
+# `image` is relative to assets/img/. Set `diagram: true` for figures with a white
+# background so they get a light card in dark mode. Text fields may contain HTML.
+
+- theme: Ternary logic for autonomous systems
+  intro: >
+    Temporal logic specifications are typically evaluated with Boolean semantics, which force a verdict of
+    <em>True</em> or <em>False</em> even when a task is still being executed. This line of work uses the
+    ternary logic K<sub>3</sub> to evaluate specifications over partial trajectories and partial executions,
+    with applications to gradient-based and mixed-integer control synthesis, online monitoring, and formal
+    verification with timed automata.
+  projects:
+    - title: Differentiable Ternary Temporal Logic Semantics with Polynomial Surrogate Networks
+      venue: under review
+      image: research/ternary_mpc.gif
+      diagram: true
+      alt: A robot arm sorting items off a conveyor belt that switches from bin A to bin B when a human reaches into bin A
+      text: >
+        Smooth approximations of STL enable gradient-based control synthesis, but the interpretation of STL is
+        binary, and a task that has not been completed by the end of a prediction horizon is assigned a verdict
+        of <em>False</em>. This work shows that the satisfaction of any ternary temporal logic formula over a
+        partial trajectory can be represented exactly as a Differentiable Ternary Logic Gate Network (DTLGN),
+        and introduces a moment propagation scheme that yields a smooth likelihood of satisfaction. The
+        animation shows a closed-loop (MPC) rollout on a 7-DoF manipulator, where the presence of a human
+        causes the manipulator to fall back and place the item into the secondary bin.
+
+    - title: Ternary Logic Encodings of Temporal Behavior Trees with Application to Control Synthesis
+      venue: CDC 2026
+      image: research/ternary_tbt.png
+      diagram: true
+      alt: Synthesized robot trajectories that branch on battery level, and three agents navigating between obstacles
+      links:
+        - name: arXiv
+          url: https://arxiv.org/abs/2604.12092
+      text: >
+        This work formulates the qualitative semantics of ternary temporal logic over partial trajectories,
+        where <em>Unknown</em> captures the case in which a partial trajectory has neither satisfied nor violated
+        a specification. We introduce mixed-integer linear encodings for ternary temporal logic over
+        K<sub>3</sub>, allowing for correct-by-construction control of linear dynamical systems via mixed-integer
+        programming. The figure shows synthesized trajectories for two initial battery levels (left), where the
+        robot must navigate to the charger at C before proceeding to B when the battery is below 80%, and a
+        multi-agent planning task (right).
+
+    - title: "OMTBT: Online Monitoring of Temporal Behavior Trees with Applications to Closed-Loop Learning"
+      venue: ECC 2025
+      image: research/omtbt_pick_place.gif
+      alt: A Franka Panda arm picking up a green cube and placing it at a goal location
+      links:
+        - name: paper
+          url: https://doi.org/10.23919/ECC65951.2025.11187275
+      text: >
+        This work proposes quantitative semantics for the online monitoring of temporal logic task
+        specifications over partial executions, composed of an inner logic based on STL and an outer logic in
+        propositional ternary logic. The semantics are a conservative approximation of the final robustness of
+        the specification and are used to design reward functions for reinforcement learning. The animation shows a
+        rollout of the learned policy on a pick-and-place task, which achieved a 100% success rate over 100 test
+        trials.
+
+    - title: "BT2Automata: Expressing Behavior Trees as Automata for Formal Control Synthesis"
+      venue: HSCC 2025
+      image: research/bt2automata.png
+      diagram: true
+      alt: A task specification translated into a timed automaton, which is used for falsification and control synthesis
+      links:
+        - name: paper
+          url: https://doi.org/10.1145/3716863.3718042
+      text: >
+        This work presents a translation from hierarchical task specifications, evaluated over a balanced
+        ternary logic, to Timed Automata (TA). The TA representation allows for the use of model checkers such as UPPAAL to check for
+        inconsistencies and falsify task specifications with timing constraints, and enables automaton-based and
+        sampling-based control synthesis for robotic tasks.
+
+- theme: Systems engineering for trusted autonomy
+  intro: >
+    Autonomous cyber-physical systems require systems engineering methodologies that span both model-based
+    design and data-driven ML/AI components. As part of a team in the Systems Engineering and Integration Lab
+    (SEIL), I contribute to open-source tools that integrate formal verification into the systems engineering
+    lifecycle.
+  projects:
+    - title: "IDDMBSE: Integrating Data-Driven and Model-Based Systems Engineering for Trusted Autonomous Cyber-Physical Systems"
+      venue: ISSE 2026
+      image: research/iddmbse_isaac.jpg
+      alt: Autonomous ground robots crossing ramps, rough rocky terrain, and grass in an Isaac Sim test range
+      links:
+        - name: arXiv
+          url: https://arxiv.org/abs/2606.06727
+        - name: code
+          url: https://github.com/SEIL-ISR/IDDMBSE
+      text: >
+        IDDMBSE is a collaborative effort in SEIL that extends the model-based systems engineering V-process with
+        a data-driven loop at every step. The methodology is realized as an open-source tool chain spanning
+        SysML-to-ROS architecture mapping, design-space exploration, and formal and runtime verification, and is
+        demonstrated on a trusted autonomous ground robot. The figure shows the contested-terrain Isaac Sim test
+        range released with the tool chain.
+
+    - title: "rcllean: A ROS 2 Client Library for Lean 4"
+      venue: software
+      links:
+        - name: code
+          url: https://github.com/SEIL-ISR/rcllean
+      text: >
+        rcllean is a ROS 2 client library for the Lean 4 programming language and theorem prover. It enables
+        users to write ROS 2 nodes and theorems about their properties in Lean 4.
