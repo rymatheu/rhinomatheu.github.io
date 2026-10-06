@@ -11,10 +11,13 @@
     verification with timed automata.
   projects:
     - title: Differentiable Ternary Temporal Logic Semantics with Polynomial Surrogate Networks
-      venue: under review
+      venue: arXiv 2026
       image: research/ternary_mpc.gif
       diagram: true
       alt: A robot arm sorting items off a conveyor belt that switches from bin A to bin B when a human reaches into bin A
+      links:
+        - name: arXiv
+          url: https://arxiv.org/abs/2610.04662
       text: >
         Smooth approximations of STL enable gradient-based control synthesis, but the interpretation of STL is
         binary, and a task that has not been completed by the end of a prediction horizon is assigned a verdict
@@ -25,7 +28,7 @@
         causes the manipulator to fall back and place the item into the secondary bin.
 
     - title: Ternary Logic Encodings of Temporal Behavior Trees with Application to Control Synthesis
-      venue: CDC 2026
+      venue: CDC 2026 (to appear)
       image: research/ternary_tbt.png
       diagram: true
       alt: Synthesized robot trajectories that branch on battery level, and three agents navigating between obstacles

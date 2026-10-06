@@ -300,6 +300,9 @@ scholar:
   query: "@*"
   group_by: year
   group_order: descending
+  # Within each year, order by conference date (the hidden sort_date field in papers.bib).
+  sort_by: sort_date,title
+  order: descending
 
 # Display different badges withs stats for your publications
 # Customize badge behavior in _layouts/bib.liquid
@@ -335,7 +338,9 @@ filtered_bibtex_keywords:
     preview,
     selected,
     slides,
+    sort_date,
     supp,
+    to_appear,
     video,
     website,
   ]
