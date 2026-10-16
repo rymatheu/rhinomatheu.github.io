@@ -104,3 +104,12 @@
       text: >
         rcllean is a ROS 2 client library for the Lean 4 programming language and theorem prover. It enables
         users to write ROS 2 nodes and theorems about their properties in Lean 4.
+
+    - title: "Robo Lean: Formalized Robot Kinematics in Lean 4"
+      venue: software
+      links:
+        - name: code
+          url: https://github.com/sdamera95/robo-lean
+      text: >
+        Robo Lean is a Lean 4 library, built on Mathlib, that formalizes the mathematical core of robot
+        manipulation from Murray, Li, and Sastry, including rigid transforms, rotations, twists, screws, and wrenches.
